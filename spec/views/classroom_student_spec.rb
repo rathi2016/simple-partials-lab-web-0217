@@ -14,6 +14,7 @@ RSpec.describe "classroom_show_view" do
     student = Student.create(name: 'Bobby', hometown: Faker::Address.city, birthday: Faker::Date.between(25.years.ago, 18.years.ago))
     assign(:student, student)
     render :template => "students/show.html.erb"
+    binding.pry
     expect(rendered).to render_template(:partial => "students/_student")
   end
 
